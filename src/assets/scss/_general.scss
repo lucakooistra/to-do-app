@@ -1,3 +1,5 @@
+@import './variables';
+
 * {
   box-sizing: border-box;
 }
@@ -11,12 +13,12 @@ body, html {
 }
 
 body {
-  font-size: 18px;
+  font-size: $font-size-text;
   font-family: "Josefin Sans", sans-serif;
 }
 
 .container {
-  max-width: 730px;
+  max-width: $container-max-width;
   margin-left: auto;
   margin-right: auto;
   padding-left: 12px;

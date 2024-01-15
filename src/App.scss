@@ -18,15 +18,15 @@
     background-position: center;
 }
 
-.todo-header {
+.app-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 100px;
+    margin-top: 80px;
     align-items: center;
 }
 
-.todo-switch {
+.app-switch {
     width: 30px;
     height: 30px;
 }
