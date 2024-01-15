@@ -4,7 +4,12 @@ function App() {
   return (
     <div className="background">
       <div className="background-img">
-        <h1>sanity check</h1>
+        <div className="container">
+          <div className="todo-header">
+            <h1>T O D O</h1>
+            <img className="todo-switch" src="./images/icon-sun.svg" />
+          </div>
+        </div>
       </div>
     </div>
   );
