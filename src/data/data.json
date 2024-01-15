@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 0,
+      "value": "Read a book",
+      "done": false
+    },
+    {
+      "id": 1,
+      "value": "Cook dinner",
+      "done": true
+    },
+    {
+      "id": 2,
+      "value": "Go for a walk",
+      "done": false
+    },
+    {
+      "id": 3,
+      "value": "Finish this application",
+      "done": false
+    }
+  ]
+}
