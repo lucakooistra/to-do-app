@@ -1,0 +1,19 @@
+@import "./assets/scss/breakpoints-variables";
+
+.background{
+    position: relative;
+    height: 100vh;
+    background-color: $dark-blue-100;
+}
+
+.background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('./assets/images/bg-desktop-dark.jpg');
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
