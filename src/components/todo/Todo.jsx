@@ -21,19 +21,20 @@ export default function Todo() {
     key={item.id}
     done={item.done}
     text={item.value}
+    handleClick={() => toggle(item.id)}
     />
   ))
 
   return (
     <div>
-      <span className="todo">
+      <div className="todo">
         <input
           className="todo-input"
           type="text"
           placeholder="Create a new todo..."
           name="input"
         />
-      </span>
+      </div>
       {todoElement}
     </div>
   );
