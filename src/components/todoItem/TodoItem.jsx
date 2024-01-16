@@ -1,12 +1,15 @@
 import React from "react";
 import "../todo/todo.scss";
+import "./todo-item.scss";
 
-export default function TodoItem() {
+
+export default function TodoItem(props) {
+
   return (
     <div className="todo-list">
-      <ul>
+      <ul className={props.done ? "disabled" : "active"}>
         <span className="todo-span">
-          <li>Jog around the park 3x</li>
+          <li className="todo-list-item">{props.text}</li>
         </span>
       </ul>
     </div>

@@ -1,0 +1,27 @@
+@import "../../assets/scss/breakpoints-variables";
+
+.todo-list {
+  border-top: 1px solid $dark-blue-600;
+
+  &:first-of-type {
+    margin-top: 20px;
+    border-top: none;
+  }
+
+  ul {
+    padding-left: 0;
+    margin: 0;
+  }
+
+
+}
+
+ul.disabled {
+    @at-root & .todo-list-item {
+        color: $dark-blue-600;
+        text-decoration: line-through;
+    }
+
+}
+
+

@@ -22,7 +22,7 @@ span {
     border-radius: 5px;
     border: none;
     background-color: $dark-blue-200;
-    color: $gray-blue-200;
+    color: $dark-blue-300;
     font-size: $font-size-text;
 
     &::placeholder {
@@ -35,20 +35,16 @@ span {
     }
   }
 
+  input {
+    color: $gray-blue-200;
+  }
+
   &::before {
     content: "";
     width: 25px;
     height: 25px;
     border: 2px solid $dark-blue-600;
     border-radius: 20px;
-  }
-}
-
-.todo-list {
-  margin-top: 20px;
-
-  ul {
-    padding-left: 0;
   }
 }
 
