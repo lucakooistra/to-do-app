@@ -13,7 +13,6 @@ li {
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  padding: 20px;
   height: 75px;
   border-radius: 5px;
   border: none;
@@ -29,16 +28,22 @@ li {
   &:focus {
     outline: none;
   }
+}
 
-  span {
-    width: 30px;
-    height: 30px;
-    border: 2px solid $dark-blue-600;
-    border-radius: 20px;
-    margin-right: 30px;
-  }
+span {
+  width: 30px;
+  height: 30px;
+  border: 2px solid $dark-blue-600;
+  border-radius: 20px;
+  margin-right: 30px;
+}
 
-  input {
-    color: $gray-blue-200;
-  }
+li {
+  cursor: pointer;
+  padding: 20px;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
 }
