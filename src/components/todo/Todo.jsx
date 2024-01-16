@@ -1,17 +1,18 @@
 import React from "react";
-import useState from "react";
+import TodoItem from "../todoItem/TodoItem";
 import "./todo.scss";
 
-function todo() {
+export default function Todo() {
   return (
-    <span className="todo">
+    <>
+      <span className="todo">
         <input
           className="todo-input"
           type="text"
           placeholder="Create a new todo..."
         />
-    </span>
+      </span>
+      <TodoItem />
+    </>
   );
 }
-
-export default todo();

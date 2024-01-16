@@ -1,4 +1,4 @@
-@import "../assets/scss/breakpoints-variables";
+@import "../../assets/scss/breakpoints-variables";
 
 .todo {
   margin-top: 30px;
@@ -12,7 +12,9 @@ span {
   padding-left: 20px;
   border-radius: 5px;
 
-  input {
+  input, li {
+    display: flex;
+    align-items: center;
     width: 100%;
     padding: 20px;
     height: 75px;
@@ -41,3 +43,12 @@ span {
     border-radius: 20px;
   }
 }
+
+.todo-list {
+  margin-top: 20px;
+
+  ul {
+    padding-left: 0;
+  }
+}
+

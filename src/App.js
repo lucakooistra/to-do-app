@@ -1,5 +1,6 @@
+import React from "react";
 import "./App.scss";
-import todo from "./components/todo";
+import Todo from "./components/todo/Todo";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
             <h1>T O D O</h1>
             <img className="app-switch" src="./images/icon-sun.svg" />
           </div>
-           {todo} 
+           <Todo /> 
         </div>
       </div>
     </div>
