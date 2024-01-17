@@ -3,7 +3,7 @@
 .background{
     position: relative;
     height: 100vh;
-    background-color: $dark-blue-100;
+    background-color: var(--theme-color-bg);
 }
 
 .background-img {
@@ -16,4 +16,17 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.app-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 80px;
+    align-items: center;
+}
+
+.app-switch {
+    width: 30px;
+    height: 30px;
 }

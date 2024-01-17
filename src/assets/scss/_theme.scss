@@ -1,0 +1,16 @@
+@import './variables';
+
+html {
+  --theme-color-bg: #{$dark-blue-100};
+//   --theme-color-tagline-text: #{$green};
+  --theme-color-text: #{$gray-blue-100};
+  --theme-color-header: #{$gray-blue-400};
+//   --secondary-button-hover-color: #{$green};
+}
+
+.theme--light {
+  --theme-color-text: #{$dark-blue-200};
+//   --theme-color-tagline-text: #{$white};
+  --theme-color-bg: #{$dark-blue-400};
+//   --secondary-button-hover-color: #{$light-green};
+}

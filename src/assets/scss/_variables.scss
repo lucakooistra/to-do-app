@@ -1,6 +1,6 @@
 //colors
 $bright-blue: hsl(220, 98%, 61%);
-$check-background:  linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+$check-background:hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 
 //light theme
 $gray-blue-100: hsl(0, 0%, 98%);
@@ -21,5 +21,9 @@ $dark-blue-700: hsl(237, 14%, 26%);
 //breakpoints
 $sm-width: 375px;
 $lg-width: 1440px;
+$container-max-width: 730px;
+
+//font-sizes
+$font-size-text: 18px;
 
 

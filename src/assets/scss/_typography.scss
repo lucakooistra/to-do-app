@@ -1,8 +1,11 @@
+@import './variables';
+
 p {
     margin: 0;
 }
 
 h1 {
     margin: 0;
-    font-size: rem-calc(32);
+    font-size: 48px;
+    color: $gray-blue-200;
 }
