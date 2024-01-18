@@ -1,16 +1,41 @@
 @import './variables';
 
-html {
-  --theme-color-bg: #{$dark-blue-100};
-//   --theme-color-tagline-text: #{$green};
-  --theme-color-text: #{$gray-blue-100};
-  --theme-color-header: #{$gray-blue-400};
-//   --secondary-button-hover-color: #{$green};
-}
 
-.theme--light {
-  --theme-color-text: #{$dark-blue-200};
-//   --theme-color-tagline-text: #{$white};
-  --theme-color-bg: #{$dark-blue-400};
-//   --secondary-button-hover-color: #{$light-green};
-}
+  .theme--dark {
+    --theme-color-bg: #{$dark-blue-100};
+    --theme-color-text: #{$dark-blue-300};
+    --theme-color-header: #{$dark-blue-500};
+    --theme-color-list: #{$dark-blue-200};
+    --theme-color-radio: 2px solid #{$dark-blue-600};
+    --theme-color-border: 1px solid #{$dark-blue-600};
+    --theme-background-image: url('../images/bg-desktop-dark.jpg');
+    transition: background-color 0.3s ease-in-out 0.4s, color 0.7s ease-in-out;
+  }
+  
+  .theme--light {
+    --theme-color-bg: #{$gray-blue-100};
+    --theme-color-text: #{$gray-blue-500};
+    --theme-color-header: #{$gray-blue-400};
+    --theme-color-list: #{$white};
+    --theme-color-radio: 2px solid #{$gray-blue-200};
+    --theme-color-border: 1px solid #{$gray-blue-200};
+    --theme-background-image: url('../images/bg-desktop-light.jpg');
+    transition: background-color 0.3s ease-in-out 0.4s, color 0.7s ease-in-out;
+  }
+
+
+// @media (prefers-color-scheme: light) {
+//   html {
+//     --theme-color-bg: #{$gray-blue-100};
+//     --theme-color-text: #{$gray-blue-500};
+//     --theme-color-header: #{$gray-blue-400};
+//     --theme-background-image: url('../images/bg-desktop-light.jpg');
+//   }
+  
+//   .theme--switch {
+//     --theme-color-bg: #{$dark-blue-100};
+//     --theme-color-text: #{$dark-blue-300};
+//     --theme-color-header: #{$dark-blue-500};
+//     --theme-background-image: url('../images/bg-desktop-dark.jpg');
+//   }
+// }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import TodoItem from "../todoItem/TodoItem";
+import TodoItem from "../TodoItem/TodoItem";
+import TodoFilter from "../TodoFilter/TodoFilter";
 import "./todo.scss";
 import data from "../../data/data.json";
 
@@ -14,15 +15,15 @@ export default function Todo() {
         {
           id: allItems.length,
           value: newInput,
-          done: false
-        }
-      ]
-    })
+          done: false,
+        },
+      ];
+    });
   }
 
   function handleKeyDown(event) {
-    if (event.key === 'Enter') {
-      addToList()
+    if (event.key === "Enter") {
+      addToList();
     }
   }
 
@@ -56,7 +57,7 @@ export default function Todo() {
               placeholder="Create a new todo..."
               name="newItem"
               onChange={(event) => {
-                setNewInput(event.target.value)
+                setNewInput(event.target.value);
               }}
               onKeyDown={handleKeyDown}
               value={newInput}
@@ -66,6 +67,7 @@ export default function Todo() {
         </ul>
       </div>
       {todoElement}
+      <TodoFilter />
     </div>
   );
 }

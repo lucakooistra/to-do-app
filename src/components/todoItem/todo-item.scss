@@ -1,7 +1,7 @@
 @import "../../assets/scss/breakpoints-variables";
 
 .todo-list {
-  border-top: 1px solid $dark-blue-600;
+  border-top: var(--theme-color-border);
 
   &:first-of-type {
     margin-top: 20px;
