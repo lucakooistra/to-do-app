@@ -1,5 +1,5 @@
 import React from "react";
-import "../TodoList/todo.scss";
+import "../todo/todo.scss";
 
 export default function TodoFilter() {
   return (

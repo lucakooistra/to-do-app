@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.scss";
-import Todo from './components/TodoList/Todo';
+import Todo from './components/todo/Todo';
 // const darkCircle = document.querySelector(".darkCircle");
 // const lightCircle = document.querySelector(".lightCircle");
 
