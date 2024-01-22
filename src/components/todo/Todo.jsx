@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import TodoItem from "../todoItem/TodoItem";
+import TodoItem from "../TodoItem/TodoItem";
+import TodoFilter from "../TodoFilter/TodoFilter";
 import "./todo.scss";
 import data from "../../data/data.json";
 
@@ -7,23 +8,17 @@ export default function Todo() {
   const [allItems, setAllItems] = useState(data.todos);
   const [newInput, setNewInput] = useState("");
 
-  function addToList() {
-    setAllItems((prevItems) => {
-      return [
-        ...allItems,
-        {
-          id: allItems.length,
-          value: newInput,
-          done: false
-        }
-      ]
-    })
-  }
-
-  function handleKeyDown(event) {
-    if (event.key === 'Enter') {
-      addToList()
-    }
+  function addToList(e) {
+    e.preventDefault();
+    setAllItems([
+      ...allItems,
+      {
+        id: allItems.length,
+        value: newInput,
+        done: false,
+      },
+    ]);
+    setNewInput("");
   }
 
   function toggle(id) {
@@ -36,36 +31,34 @@ export default function Todo() {
     });
   }
 
-  const todoElement = allItems.map((item) => (
-    <TodoItem
-      key={item.id}
-      done={item.done}
-      text={item.value}
-      handleClick={() => toggle(item.id)}
-    />
-  ));
-
   return (
     <div>
       <div className="todo">
-        <ul>
-          <li>
-            <input
-              className="todo-input"
-              type="text"
-              placeholder="Create a new todo..."
-              name="newItem"
-              onChange={(event) => {
-                setNewInput(event.target.value)
-              }}
-              onKeyDown={handleKeyDown}
-              value={newInput}
+            <form className="todo-form" onSubmit={addToList}>
+              <input
+                className="todo-input"
+                type="text"
+                placeholder="Create a new todo..."
+                name="newItem"
+                onChange={(e) => {
+                  setNewInput(e.target.value);
+                }}
+                value={newInput}
+              />
+              <button type="submit"></button>
+            </form>
+            <ul>
+          {allItems.map((item) => (
+            <TodoItem
+              key={item.id}
+              done={item.done}
+              text={item.value}
+              handleClick={() => toggle(item.id)}
             />
-            <span></span>
-          </li>
+          ))}
         </ul>
       </div>
-      {todoElement}
+      <TodoFilter />
     </div>
   );
 }
