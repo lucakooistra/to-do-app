@@ -1,11 +1,23 @@
-@import './variables';
+@import "./variables";
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 h1 {
-    margin: 0;
-    font-size: 48px;
-    color: $gray-blue-200;
+  margin: 0;
+  font-size: 48px;
+  color: $gray-blue-200;
+}
+
+input {
+  font-size: $font-size-text;
+  color: var(--theme-color-text);
+  font-family: "Josefin Sans", sans-serif;
+
+  &::placeholder {
+    color: var(--theme-color-header);
+    font-size: $font-size-text;
+    font-family: "Josefin Sans", sans-serif;
+  }
 }

@@ -8,7 +8,8 @@ export default function Todo() {
   const [allItems, setAllItems] = useState(data.todos);
   const [newInput, setNewInput] = useState("");
 
-  function addToList() {
+  function addToList(e) {
+    e.preventDefault();
     setAllItems([
       ...allItems,
       {
@@ -17,12 +18,7 @@ export default function Todo() {
         done: false,
       },
     ]);
-  }
-
-  function handleKeyDown(event) {
-    if (event.key === "Enter") {
-      addToList();
-    }
+    setNewInput("");
   }
 
   function toggle(id) {
@@ -38,20 +34,20 @@ export default function Todo() {
   return (
     <div>
       <div className="todo">
-        <ul>
-          <li className="todo-list-item">
-            <input
-              className="todo-input"
-              type="text"
-              placeholder="Create a new todo..."
-              name="newItem"
-              onChange={(event) => {
-                setNewInput(event.target.value);
-              }}
-              onKeyDown={handleKeyDown}
-              value={newInput}
-            />
-          </li>
+            <form className="todo-form" onSubmit={addToList}>
+              <input
+                className="todo-input"
+                type="text"
+                placeholder="Create a new todo..."
+                name="newItem"
+                onChange={(e) => {
+                  setNewInput(e.target.value);
+                }}
+                value={newInput}
+              />
+              <button type="submit"></button>
+            </form>
+            <ul>
           {allItems.map((item) => (
             <TodoItem
               key={item.id}
