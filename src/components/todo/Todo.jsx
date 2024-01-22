@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TodoItem from "../todoItem/TodoItem";
-import TodoFilter from "../todoFilter/TodoFilter";
+import TodoFilter from "../anTodoFilter/TodoFilter";
 import "./todo.scss";
 import data from "../../data/data.json";
 
