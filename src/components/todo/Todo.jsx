@@ -9,16 +9,14 @@ export default function Todo() {
   const [newInput, setNewInput] = useState("");
 
   function addToList() {
-    setAllItems((prevItems) => {
-      return [
-        ...allItems,
-        {
-          id: allItems.length,
-          value: newInput,
-          done: false,
-        },
-      ];
-    });
+    setAllItems([
+      ...allItems,
+      {
+        id: allItems.length,
+        value: newInput,
+        done: false
+      }
+    ])
   }
 
   function handleKeyDown(event) {
@@ -50,7 +48,7 @@ export default function Todo() {
     <div>
       <div className="todo">
         <ul>
-          <li>
+          <li className="todo-list-item">
             <input
               className="todo-input"
               type="text"
@@ -62,11 +60,10 @@ export default function Todo() {
               onKeyDown={handleKeyDown}
               value={newInput}
             />
-            <span></span>
           </li>
+      {todoElement}
         </ul>
       </div>
-      {todoElement}
       <TodoFilter />
     </div>
   );

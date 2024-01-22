@@ -1,21 +1,33 @@
 @import "../../assets/scss/breakpoints-variables";
 
-.todo-list {
+.todo-list-item {
   border-top: var(--theme-color-border);
 
-  &:first-of-type {
-    margin-top: 20px;
-    border-top: none;
+  &::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: var(--theme-color-radio);
+    border-radius: 20px;
+    margin-right: 30px;
+  }
+
+  button {
+    all: unset;
+
+    &:focus {
+      border: var(--theme-color-radio);
+      padding: 5px;
+      border-radius: 5px;
+    }
   }
 }
 
-ul.disabled {
-  .todo-list-item {
-    color: $dark-blue-600;
-    text-decoration: line-through;
-  }
+.todo-list-item.disabled {
+  color: $dark-blue-600;
+  text-decoration: line-through;
 
-  span {
+  &::before {
     background: url("../../assets/images/icon-check.svg"),
       linear-gradient(0.4turn, #57ddff, #c058f3);
     background-repeat: no-repeat;

@@ -23,7 +23,7 @@ function App() {
       <div className="background-img">
         <div className="container">
           <div className="app-header">
-            <h1>T O D O</h1>
+            <h1>todo</h1>
             <img
               onClick={toggleDarkmode}
               className="app-switch"
@@ -35,9 +35,11 @@ function App() {
           </div>
           <Todo />
         </div>
+      <div className="container--cover">
+        <div className={`darkCircle ${themeMode ? "" : "grow"}`}></div>
+        <div className={`lightCircle ${themeMode ? "grow" : ""}`}></div>
       </div>
-      <div className={`darkCircle ${themeMode ? "" : "grow"}`}></div>
-      <div className={`lightCircle ${themeMode ? "grow" : ""}`}></div>
+      </div>
     </div>
   );
 }
