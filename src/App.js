@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./App.scss";
 import Todo from "./components/Todo/Todo";
-const darkCircle = document.querySelector(".darkCircle");
-const lightCircle = document.querySelector(".lightCircle");
+// const darkCircle = document.querySelector(".darkCircle");
+// const lightCircle = document.querySelector(".lightCircle");
 
 const query = window.matchMedia("(prefers-color-scheme: dark)");
 
 function App() {
   const [themeMode, setThemeMode] = useState(query.matches);
-  const [grow, setGrow] = useState("");
+  // const [grow, setGrow] = useState("");
 
   function toggleDarkmode() {
     setThemeMode(!themeMode);
