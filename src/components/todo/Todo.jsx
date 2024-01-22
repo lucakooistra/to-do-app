@@ -14,9 +14,9 @@ export default function Todo() {
       {
         id: allItems.length,
         value: newInput,
-        done: false
-      }
-    ])
+        done: false,
+      },
+    ]);
   }
 
   function handleKeyDown(event) {
@@ -35,15 +35,6 @@ export default function Todo() {
     });
   }
 
-  const todoElement = allItems.map((item) => (
-    <TodoItem
-      key={item.id}
-      done={item.done}
-      text={item.value}
-      handleClick={() => toggle(item.id)}
-    />
-  ));
-
   return (
     <div>
       <div className="todo">
@@ -61,7 +52,14 @@ export default function Todo() {
               value={newInput}
             />
           </li>
-      {todoElement}
+          {allItems.map((item) => (
+            <TodoItem
+              key={item.id}
+              done={item.done}
+              text={item.value}
+              handleClick={() => toggle(item.id)}
+            />
+          ))}
         </ul>
       </div>
       <TodoFilter />

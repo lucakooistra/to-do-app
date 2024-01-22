@@ -2,13 +2,13 @@ import React from "react";
 import "../Todo/todo.scss";
 import "./todo-item.scss";
 
-export default function TodoItem(props) {
+export default function TodoItem({ done, handleClick, text }) {
   return (
     <li
-      className={`todo-list-item ${props.done ? "disabled" : "active"}`}
-      onClick={props.handleClick}
+      className={`todo-list-item ${done ? "disabled" : "active"}`}
+      onClick={handleClick}
     >
-      <button>{props.text}</button>
+      <button>{text}</button>
     </li>
   );
 }
