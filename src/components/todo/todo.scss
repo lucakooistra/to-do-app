@@ -50,6 +50,11 @@ form {
     height: 100%;
     width: 100%;
     padding: 20px 20px 20px 0;
+    
+    &:focus{
+      outline: none;
+    }
+    
   }
 }
 
@@ -57,10 +62,10 @@ button {
   all: unset;
   color: var(--theme-color-text);
   transition: color 0.1s linear 0.4s;
+  padding: 5px;
 
-  &:focus {
-    border: var(--theme-color-radio);
-    padding: 5px;
+  &:focus-visible {
+    outline: var(--theme-color-radio);
     border-radius: 5px;
 
     &[type="submit"] {
