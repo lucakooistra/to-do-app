@@ -16,47 +16,55 @@ form {
   justify-content: flex-start;
   align-items: center;
   height: 75px;
-  border-radius: 5px;
   border: none;
   background-color: var(--theme-color-list);
   font-size: $font-size-text;
-  padding: 20px;
+  transition: background-color 0.1s linear 0.3s, border 0.1s linear 0.3s;
 }
 
 li {
-  color: var(--theme-color-text);
-
+  padding: 20px;
   &:focus {
     outline: none;
   }
 }
 
 form {
+  border-radius: 5px;
+  overflow: hidden;
+  
   &::before {
     content: "";
     width: 30px;
     height: 30px;
     border: var(--theme-color-radio);
     border-radius: 20px;
+    margin-left: 20px;
     margin-right: 30px;
   }
 
   input {
     background-color: var(--theme-color-list);
     border: none;
-  }
-
-  button:focus {
-    all: unset;
+    transition: background-color 0.1s linear 0.4s;
+    height: 100%;
+    width: 100%;
+    padding: 20px 20px 20px 0;
   }
 }
 
 button {
   all: unset;
+  color: var(--theme-color-text);
+  transition: color 0.1s linear 0.4s;
 
   &:focus {
     border: var(--theme-color-radio);
     padding: 5px;
     border-radius: 5px;
+
+    &[type="submit"] {
+      all: unset;
+    }
   }
 }

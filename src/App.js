@@ -1,23 +1,27 @@
 import React, { useState } from "react";
 import "./App.scss";
-import Todo from './components/todo/Todo';
-// const darkCircle = document.querySelector(".darkCircle");
-// const lightCircle = document.querySelector(".lightCircle");
+import Todo from "./components/todo/Todo";
 
 const query = window.matchMedia("(prefers-color-scheme: dark)");
 
 function App() {
-  const [themeMode, setThemeMode] = useState(query.matches);
-  // const [grow, setGrow] = useState("");
+  const [isDarkmode, setIsDarkmode] = useState(query.matches);
+  const [grow, setGrow] = useState(false);
 
   function toggleDarkmode() {
-    setThemeMode(!themeMode);
+    setIsDarkmode(!isDarkmode);
+
+    setGrow(true);
+
+    setTimeout(() => {
+      setGrow(false);
+    }, 1000);
   }
 
   return (
     <div
       className={
-        themeMode ? "background theme--dark" : "background theme--light"
+        isDarkmode ? "background theme--dark" : "background theme--light"
       }
     >
       <div className="background-img">
@@ -28,18 +32,17 @@ function App() {
               onClick={toggleDarkmode}
               className="app-switch"
               src={
-                themeMode ? "./images/icon-sun.svg" : "./images/icon-moon.svg"
+                isDarkmode ? "./images/icon-sun.svg" : "./images/icon-moon.svg"
               }
               alt=""
             />
           </div>
           <Todo />
         </div>
-      <div className="container--cover">
-        <div className={`darkCircle ${themeMode ? "" : "grow"}`}></div>
-        <div className={`lightCircle ${themeMode ? "grow" : ""}`}></div>
       </div>
-      </div>
+        <div className="cover">
+          <div className={`circle ${grow ? "grow" : ""}`}></div>
+        </div>
     </div>
   );
 }

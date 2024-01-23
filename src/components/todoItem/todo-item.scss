@@ -3,12 +3,12 @@
 .todo-list-item {
   border-top: var(--theme-color-border);
   cursor: pointer;
-
+  
   &:first-of-type {
     margin-top: 20px;
     border-top: none;
   }
-
+  
   &::before {
     content: "";
     width: 30px;
@@ -16,11 +16,12 @@
     border: var(--theme-color-radio);
     border-radius: 20px;
     margin-right: 30px;
+    transition: border 1s ease-in-out;
+
   }
 }
 
 .todo-list-item.disabled {
-  color: $dark-blue-600;
   text-decoration: line-through;
 
   &::before {
@@ -31,5 +32,9 @@
     border: none;
     width: 30px;
     height: 30px;
+  }
+
+  button {
+    color: $dark-blue-600;
   }
 }

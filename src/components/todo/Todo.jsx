@@ -53,7 +53,7 @@ export default function Todo() {
               key={item.id}
               done={item.done}
               text={item.value}
-              handleClick={() => toggle(item.id)}
+              onClick={() => toggle(item.id)}
             />
           ))}
         </ul>
