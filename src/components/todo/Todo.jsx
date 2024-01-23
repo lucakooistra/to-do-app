@@ -8,6 +8,7 @@ export default function Todo() {
   const [allItems, setAllItems] = useState(data.todos);
   const [newInput, setNewInput] = useState("");
   const [filter, setFilter] = useState("active");
+  const filteredItems = getItems()
 
   function addToList(e) {
     e.preventDefault();
@@ -43,7 +44,6 @@ export default function Todo() {
     }
   }
 
-  const filteredItems = getItems()
 
   return (
     <div>
