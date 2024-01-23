@@ -35,46 +35,50 @@
 
 /* CIRCLE STYLES AND ANIMATION */
 
-.darkCircle {
+.circle {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
   background-color: var(--theme-color-bg);
-  clip-path: circle(0% at 50% 0%);
+  clip-path: circle(0%);
   z-index: 1;
 }
 
-.lightCircle {
-  position: absolute;
-  top: 0;
-  left: 0;
+.circle.grow {
   width: 100%;
   height: 100%;
-  background-color: var(--theme-color-bg);
-  clip-path: circle(0% at 50% 0%);
-  z-index: 1;
-}
-
-.darkCircle.grow {
-  animation-name: circle-grow;
-  animation-duration: 0.7s;
+  animation-name: circle-grow, circle-opacity;
+  animation-duration: 3s;
   animation-timing-function: ease-in-out;
 }
 
-.lightCircle.grow {
-  animation-name: circle-grow;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-in-out;
+.cover {
+  position: relative;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes circle-grow {
   0% {
-    clip-path: circle(0% at 50% 0%);
+    clip-path: circle(0% at 100% 0%);
+  }
+
+  20% {
+    clip-path: circle(150% at 100% 0%);
   }
 
   100% {
-    clip-path: circle(150% at 50% 0%);
+    clip-path: circle(150%);
+  }
+}
+
+@keyframes circle-opacity {
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
   }
 }
