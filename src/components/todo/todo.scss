@@ -50,21 +50,14 @@ form {
     height: 100%;
     width: 100%;
     padding: 20px 20px 20px 0;
-  }
-}
-
-button {
-  all: unset;
-  color: var(--theme-color-text);
-  transition: color 0.1s linear 0.4s;
-
-  &:focus {
-    border: var(--theme-color-radio);
-    padding: 5px;
-    border-radius: 5px;
-
-    &[type="submit"] {
-      all: unset;
+    
+    &:focus{
+      outline: none;
     }
   }
+
+  button {
+    all: unset;
+  }
 }
+

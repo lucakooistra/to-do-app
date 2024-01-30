@@ -19,6 +19,22 @@
     transition: border 1s ease-in-out;
 
   }
+
+  button {
+    all: unset;
+    color: var(--theme-color-text);
+    transition: color 0.1s linear 0.4s;
+    padding: 5px;
+  
+    &:focus-visible {
+      outline: var(--theme-color-radio);
+      border-radius: 5px;
+  
+      &[type="submit"] {
+        all: unset;
+      }
+    }
+  }
 }
 
 .todo-list-item.disabled {
@@ -35,6 +51,6 @@
   }
 
   button {
-    color: $dark-blue-600;
+    color: var(--theme-color-done);
   }
 }
