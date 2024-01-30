@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoItem from "../todoItem/TodoItem";
 import TodoFilter from "../anTodoFilter/TodoFilter";
 import "./todo.scss";
-import data from "../../data/data.json";
 
 export default function Todo() {
-  const [allItems, setAllItems] = useState(data.todos);
+  const [allItems, setAllItems] = useState(JSON.parse(localStorage.getItem('all-items')) || []);
   const [newInput, setNewInput] = useState("");
   const [filter, setFilter] = useState("all");
 
+  useEffect(() => localStorage.setItem("all-items", JSON.stringify(allItems)), [allItems])
+
   //add new items to the array and put the new input to blank
   function addToList(e) {
-    e.preventDefault();
+    e.preventDefault()
+    newInput !== "" &&
     setAllItems([
       ...allItems,
       {
@@ -49,6 +51,14 @@ export default function Todo() {
     }
   }
 
+  //filter all items on the one that are done
+  function deleteCompletedItems() {
+    setAllItems((prevItems) => {
+      return prevItems.filter(item => !item.done)
+    })
+  }
+  
+
   return (
     <div>
       <div className="todo">
@@ -80,6 +90,7 @@ export default function Todo() {
         filter={filter}
         onFilterChange={setFilter}
         items={allItems.filter(item => !item.done)}
+        deleteItem={deleteCompletedItems}
       />
     </div>
   );

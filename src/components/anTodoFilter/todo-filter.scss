@@ -10,27 +10,27 @@
     border-top: var(--theme-color-border);
     padding: 0 20px;
     color: var(--theme-color-header);
+    transition: all 0.1s linear 0.4s;
 
 
     &__buttons {
         display: flex;
         justify-content: space-between;
         gap: 30px;
-        
-        button {
-            margin: 0;
-            padding: 0;
-            border: none;
-            background: transparent;
-            text-decoration: none;
-            font-size: $font-size-text;
-            color: var(--theme-color-header);
-            font-weight: 700;
-            cursor: pointer;
+    }
+    button {
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+        text-decoration: none;
+        font-size: $font-size-text;
+        color: var(--theme-color-header);
+        font-weight: 700;
+        cursor: pointer;
 
-            &.active {
-                color: $bright-blue;
-            }
+        &.active {
+            color: $bright-blue;
         }
     }
 }
