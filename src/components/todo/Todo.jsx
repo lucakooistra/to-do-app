@@ -7,9 +7,9 @@ import data from "../../data/data.json";
 export default function Todo() {
   const [allItems, setAllItems] = useState(data.todos);
   const [newInput, setNewInput] = useState("");
-  const [filter, setFilter] = useState("active");
-  const filteredItems = getItems()
+  const [filter, setFilter] = useState("all");
 
+  //add new items to the array and put the new input to blank
   function addToList(e) {
     e.preventDefault();
     setAllItems([
@@ -23,6 +23,8 @@ export default function Todo() {
     setNewInput("");
   }
 
+
+  //if the id is the same as the one clicked, change the boolean of done prop
   function toggle(id) {
     setAllItems((prevItems) => {
       return prevItems.map((allItems) => {
@@ -32,6 +34,9 @@ export default function Todo() {
       });
     });
   }
+
+  //filter the items and put it in a new array
+  const filteredItems = getItems()
 
   function getItems() {
     switch (filter) {
@@ -43,7 +48,6 @@ export default function Todo() {
         return allItems;
     }
   }
-
 
   return (
     <div>
@@ -72,7 +76,11 @@ export default function Todo() {
           ))}
         </ul>
       </div>
-      <TodoFilter />
+      <TodoFilter
+        filter={filter}
+        onFilterChange={setFilter}
+        items={allItems.filter(item => !item.done)}
+      />
     </div>
   );
 }

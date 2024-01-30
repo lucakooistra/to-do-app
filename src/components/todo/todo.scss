@@ -54,22 +54,10 @@ form {
     &:focus{
       outline: none;
     }
-    
+  }
+
+  button {
+    all: unset;
   }
 }
 
-button {
-  all: unset;
-  color: var(--theme-color-text);
-  transition: color 0.1s linear 0.4s;
-  padding: 5px;
-
-  &:focus-visible {
-    outline: var(--theme-color-radio);
-    border-radius: 5px;
-
-    &[type="submit"] {
-      all: unset;
-    }
-  }
-}

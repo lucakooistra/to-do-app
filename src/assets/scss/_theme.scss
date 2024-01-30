@@ -6,6 +6,7 @@
     --theme-color-text: #{$dark-blue-300};
     --theme-color-header: #{$dark-blue-500};
     --theme-color-list: #{$dark-blue-200};
+    --theme-color-done: #{$dark-blue-600};
     --theme-color-radio: 2px solid #{$dark-blue-600};
     --theme-color-border: 1px solid #{$dark-blue-600};
     --theme-background-image: url('../images/bg-desktop-dark.jpg');
@@ -17,6 +18,7 @@
     --theme-color-text: #{$gray-blue-500};
     --theme-color-header: #{$gray-blue-400};
     --theme-color-list: #{$white};
+    --theme-color-done: #{$gray-blue-300};
     --theme-color-radio: 2px solid #{$gray-blue-200};
     --theme-color-border: 1px solid #{$gray-blue-200};
     --theme-background-image: url('../images/bg-desktop-light.jpg');

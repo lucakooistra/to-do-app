@@ -10,6 +10,10 @@ h1 {
   color: $gray-blue-200;
 }
 
+button {
+  font-family: "Josefin Sans", sans-serif;
+}
+
 input {
   font-size: $font-size-text;
   color: var(--theme-color-text);
